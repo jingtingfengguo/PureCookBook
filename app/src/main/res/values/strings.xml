@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PureCookBook</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">分享</string>
+    <string name="cai_pin">菜品</string>
+    <string name="choose_cai">选择菜品</string>
+    <string name="menu">全部菜谱分类</string>
+</resources>
