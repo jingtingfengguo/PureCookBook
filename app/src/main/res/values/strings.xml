@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PureCookBook</string>
+    <string name="app_name">Pure菜谱</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,4 +8,14 @@
     <string name="cai_pin">菜品</string>
     <string name="choose_cai">选择菜品</string>
     <string name="menu">全部菜谱分类</string>
+
+
+        <string name="app_information">
+            本应用是以简洁作为核心要素的一款轻型实用菜谱软件。
+            菜谱来自于网络数据接口，为了做到无广告非盈利，请大家尽量减少刷新频率。
+            由于软件制作时间仓促，存在纰漏和不足，欢迎各位提出宝贵的意见。
+        </string>
+
+    <string name="all_rights_reserved">Copyright © 2016-2018 jingting. All Rights Reserved.</string>
+
 </resources>

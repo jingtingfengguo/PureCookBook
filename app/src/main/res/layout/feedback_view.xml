@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@id/top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/other_activity_bar" />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/big_bg"
+        android:fillViewport="true" >
+
+        <EditText
+            android:id="@+id/fee_back_edit"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="请输入您的意见或者建议"
+            android:inputType="textMultiLine"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
+            android:textSize="16sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/feed_back_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/feedback_btn"
+        android:text="提  交" />
+
+</LinearLayout>

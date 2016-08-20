@@ -64,8 +64,6 @@ public class MainActivity extends BaseActivity
     private GridView main_mygridview;
     private List<String> list;
     private IconCenterEditText icet_search;
-    private TextView collect;
-    private TextView recent;
     private TextView allmenu;
 
     @Override
@@ -77,22 +75,6 @@ public class MainActivity extends BaseActivity
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");
         toolbar.setSubtitle("");
-        icet_search = (IconCenterEditText) findViewById(R.id.icet_search);
-        // 实现TextWatcher监听即可
-        icet_search.setOnSearchClickListener(new IconCenterEditText.OnSearchClickListener() {
-            @Override
-            public void onSearchClick(View view) {
-                String content = icet_search.getText().toString();
-                if (content.length() != 0) {
-                    Intent intent = new Intent(MainActivity.this, CookActivity.class);
-                    intent.putExtra("title", "搜索菜谱");
-                    intent.putExtra("search_key", content);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
-                }
-            }
-        });
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -103,15 +85,7 @@ public class MainActivity extends BaseActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        allmenu=(TextView)findViewById(R.id.all_menu);
-        allmenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, IndexActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.new_to_top, R.anim.old_to_top);
-            }
-        });
+
 
         initBefore();
         init();
@@ -170,7 +144,7 @@ public class MainActivity extends BaseActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Toast.makeText(MainActivity.this,"功能尚未开发，尽请期待后续版本!",Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -182,18 +156,32 @@ public class MainActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
+            onBackPressed();
+        } else if (id == R.id.nav_collection) {
 
-        } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(MainActivity.this, CookActivity.class);
+            intent.putExtra("title", "我的收藏");
+            intent.putExtra("tab_cursor", 2);
+            startActivity(intent);
+            overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_recent) {
+            Intent intent = new Intent(MainActivity.this, CookActivity.class);
+            intent.putExtra("title", "最近浏览");
+            intent.putExtra("tab_cursor", 1);
+            startActivity(intent);
+            overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
 
-        } else if (id == R.id.nav_share) {
+        }  else if (id == R.id.nav_feedback) {
+            Intent intent = new Intent(MainActivity.this, FeedBackActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_about) {
+            Intent intent = new Intent(MainActivity.this, About.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -218,6 +206,35 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void initBefore() {
+
+        icet_search = (IconCenterEditText) findViewById(R.id.icet_search);
+        // 实现TextWatcher监听即可
+        icet_search.setOnSearchClickListener(new IconCenterEditText.OnSearchClickListener() {
+            @Override
+            public void onSearchClick(View view) {
+                String content = icet_search.getText().toString();
+                if (content.length() != 0) {
+                    Intent intent = new Intent(MainActivity.this, CookActivity.class);
+                    intent.putExtra("title", "搜索菜谱");
+                    intent.putExtra("search_key", content);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.new_to_left, R.anim.old_to_left);
+                }
+            }
+        });
+
+        allmenu=(TextView)findViewById(R.id.all_menu);
+        allmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IndexActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.new_to_top, R.anim.old_to_top);
+            }
+        });
+
+
+
     }
 
     @Override

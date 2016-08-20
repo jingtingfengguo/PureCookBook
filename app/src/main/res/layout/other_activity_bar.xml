@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abs__action_bar_default_height"
+        android:background="@drawable/layer_card_background" >
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="22dp"
+            android:minWidth="22dp"
+            android:padding="12dip"
+            android:src="@drawable/ic_chevron_left_24dp1" />
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            style="@style/Label.Shadow"
+            android:text="B"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+
+</merge>

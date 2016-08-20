@@ -37,4 +37,22 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Label">
+        <item name="android:textSize">8sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Label.Shadow" parent="@style/Label">
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.5</item>
+    </style>
+
+    <style name="Label.Shadow.Medium" parent="@style/Label.Shadow">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+
 </resources>
