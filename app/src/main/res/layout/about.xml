@@ -145,7 +145,7 @@
                 android:gravity="bottom|center"
                 android:includeFontPadding="false"
                 android:singleLine="true"
-                android:text="@string/all_rights_reserved"
+                android:text="Copyright © 2016-2018 jingting. All Rights Reserved."
                 android:textColor="#ffbbbbbb"
                 android:textSize="12sp" />
         </RelativeLayout>
